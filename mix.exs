@@ -18,7 +18,7 @@ defmodule GPSCarrier.Mixfile do
   def application do
     [mod: {GPSCarrier, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger,
-                    :phoenix_ecto, :postgrex]]
+                    :phoenix_ecto, :postgrex, :httpoison]]
   end
 
   # Specifies which paths to compile per environment
@@ -34,6 +34,8 @@ defmodule GPSCarrier.Mixfile do
      {:postgrex, ">= 0.0.0"},
      {:phoenix_html, "~> 1.0"},
      {:phoenix_live_reload, "~> 0.4", only: :dev},
+     {:httpoison, "~> 0.6"},
+     {:exjsx, "~> 3.0"},
      {:cowboy, "~> 1.0"}]
   end
 end

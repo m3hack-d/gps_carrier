@@ -24,7 +24,9 @@ defmodule GPSCarrier.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", GPSCarrier do
-  #   pipe_through :api
-  # end
+  scope "/api", GPSCarrier do
+    pipe_through :api
+
+    post "/location/test", LocationController, :test
+  end
 end
