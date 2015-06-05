@@ -29,7 +29,7 @@ config :logger, :console, format: "[$level] $message\n"
 # Configure your database
 config :gps_carrier, GPSCarrier.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "gps_carrier_dev",
+  username: "phoenix_app",
+  password: "phoenix_app",
+  database: "phoenix_app_dev",
   size: 10 # The amount of database connections in the pool
