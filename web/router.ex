@@ -1,6 +1,10 @@
 defmodule GPSCarrier.Router do
   use GPSCarrier.Web, :router
 
+  #  socket "/ws", GPSCarrier do
+  #    channel "location:*", LocationChannel
+  #  end
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -16,6 +20,7 @@ defmodule GPSCarrier.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/location", LocationController, :notify
   end
 
   # Other scopes may use custom stacks.
