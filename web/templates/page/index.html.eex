@@ -1,3 +1,8 @@
+<div>
+  <button class="js-post-location-sea" data-lat="0" data-lon="0">0.0</button>
+  <button class="js-post-location-tokyo" data-lat="35.681368" data-lon="139.766076">東京駅</button>
+  <button class="js-post-location">current(TODO:)</button>
+<div>
 <div class="jumbotron">
   <h2>Welcome to Phoenix!</h2>
   <p class="lead">Most frameworks make you choose between speed and a productive environment. <a href="http://phoenixframework.org">Phoenix</a> and <a href="http://elixir-lang.org">Elixir</a> give you both.</p>

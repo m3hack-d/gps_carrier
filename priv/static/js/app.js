@@ -1201,10 +1201,7 @@ if (navigator.geolocation) {
 function success(position) {
   console.log(position.coords.latitude);
   console.log(position.coords.longitude);
-  $.get("/location", {
-    "latitude": position.coords.latitude,
-    "longitude": position.coords.longitude
-  });
+  postLocation(position.coords.latitude, position.coords.longitude);
 }
 
 function error(error) {
@@ -1217,7 +1214,23 @@ var opts = {
   "maximumAge": 5000
 };
 
-navigator.geolocation.getCurrentPosition(success, error, opts);
+function postLocation(lat, lon) {
+  $.get("/location", {
+    "latitude": lat,
+    "longitude": lon
+  });
+}
+
+$(".js-post-location-sea").click(function () {
+  var $button = $(".js-post-location-sea");
+  postLocation($button.data("lat"), $button.data("lon"));
+});
+$(".js-post-location-tokyo").click(function () {
+  var $button = $(".js-post-location-tokyo");
+  postLocation($button.data("lat"), $button.data("lon"));
+});
+
+//navigator.geolocation.getCurrentPosition(success, error, opts);
 
 // var socket = new Socket("/ws");
 // socket.connect();
